@@ -44,7 +44,7 @@ WITH
             c.name
     )
     -- Вывод результата.
-SELECT cp.ID_customer, cp.name, cp.preferred_hotel_type, cp.visited_hotels
+SELECT cp.ID_customer AS ID_customer, cp.name, cp.preferred_hotel_type, cp.visited_hotels
 FROM CustomerPreferences cp
 ORDER BY
     CASE cp.preferred_hotel_type

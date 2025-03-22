@@ -37,7 +37,7 @@ WITH
             SUM(r.price) > 500 -- Условие отбора клиентов по потраченной сумме.
     )
     -- Соединяем клиентов, отобранных по условиям в обоих CTE.
-SELECT cb.ID_customer, cb.name, cb.total_bookings, cb.total_spent, cb.unique_hotels
+SELECT cb.ID_customer AS ID_customer, cb.name, cb.total_bookings, cb.total_spent, cb.unique_hotels
 FROM
     ClientBookings cb
     JOIN ClientSpentMoreThan500 csm ON cb.ID_customer = csm.ID_customer -- Соединяем результаты CTE по ID клиента.
