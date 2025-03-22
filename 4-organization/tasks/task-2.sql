@@ -35,8 +35,7 @@ WITH RECURSIVE
             d.DepartmentName,
             r.RoleName
     )
-
--- Основной запрос.
+    -- Основной запрос.
 SELECT
     ep.EmployeeID AS EmployeeID,
     ep.EmployeeName AS EmployeeName,

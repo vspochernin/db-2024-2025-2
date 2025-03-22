@@ -1,6 +1,6 @@
 WITH RECURSIVE
     SubordinatesCTE AS (
-        -- Базовый случай: начинаем с всех сотрудников-менеджеров, которые имеют подчинённых.
+        -- Базовый случай: начинаем со всех сотрудников-менеджеров, которые имеют подчинённых.
         SELECT e.EmployeeID, e.Name AS EmployeeName, e.ManagerID, e.DepartmentID, e.RoleID
         FROM Employees e
         WHERE
@@ -51,8 +51,7 @@ WITH RECURSIVE
         GROUP BY
             s.ManagerID
     )
-
--- Основной запрос.
+    -- Основной запрос.
 SELECT
     mi.EmployeeID AS EmployeeID,
     mi.EmployeeName AS EmployeeName,
